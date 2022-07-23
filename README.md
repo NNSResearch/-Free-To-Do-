@@ -1,4 +1,4 @@
-# ForYou
+# FreeCreate
 A Text Game from No Name Studio and No Name Studio Research
 @NNSResearch
 
