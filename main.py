@@ -47,7 +47,7 @@ def listen_move_main_world():
             if posit[1] > 32:
                 """posit[1] = 31
                 print("\03[32;1m<GAME>\03[0m边界限制：不能继续向上移动")"""
-                print("\033[32;1m<GAME>\033[31;1m你si了！")
+                print("\033[32;1m<GAME>\033[31;1m你死了！")
                 print("\033[32;1m<GAME>\033[0m{}掉出了这个世界".format(name))
                 break
                 
@@ -57,7 +57,7 @@ def listen_move_main_world():
             if posit[1] < 0:
                 """posit[1] = 1
                 print("\03[32;1m<GAME>\03[0m边界限制：不能继续向下移动")"""
-                print("\033[32;1m<GAME>\033[31;1m你si了！")
+                print("\033[32;1m<GAME>\033[31;1m你死了！")
                 print("\033[32;1m<GAME>\033[0m{}掉出了这个世界".format(name))
                 break
                 
@@ -67,7 +67,7 @@ def listen_move_main_world():
             if posit[0] < 0:
                 """posit[0] = 1
                 print("\03[32;1m<GAME>\03[0m边界限制：不能继续向左移动")"""
-                print("\033[32;1m<GAME>\033[31;1m你si了！")
+                print("\033[32;1m<GAME>\033[31;1m你死了！")
                 print("\033[32;1m<GAME>\033[0m{}掉出了这个世界".format(name))
                 break
                 
@@ -77,7 +77,7 @@ def listen_move_main_world():
             if posit[0] > 20:
                 """posit[0] = 19
                 print("\03[32;1m<GAME>\03[0m边界限制：不能继续向右移动")"""
-                print("\033[32;1m<GAME>\033[31;1m你si了！")
+                print("\033[32;1m<GAME>\033[31;1m你死了！")
                 print("\033[32;1m<GAME>\033[0m{}掉出了这个世界".format(name))
                 break
                 
