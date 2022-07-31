@@ -3,6 +3,7 @@ import boot, webbrowser
 
 boot.boot()
 
+vertical = False
 init_pos = []
 posit = []
 spell_correct = random.randint(0, 10)
@@ -17,8 +18,12 @@ BROKE = 0
 B1ROKE = 0
 status = "NORMAL"
 
-xValue = random.randint(0, 20)
-yValue = random.randint(0, 32)
+x1 = 0
+x2 = 20
+y1 = 0
+y2 = 32
+xValue = random.randint(x1, x2)
+yValue = random.randint(y1, y2)
 posit.append(xValue)
 posit.append(yValue)
 init_pos.append(xValue)
@@ -37,6 +42,11 @@ for i in range(4):
     TreePosList[i].append(yValue)
 
 def listen_move_main_world():
+    global y2
+    global y1
+    global x1
+    global x2
+    
     print("\033[32;1m<GAME>\033[0m游戏初始化成功")
     print("\033[32;1m<GAME>\033[0m{}出生，地点为{}".format(name, init_pos))
     while True:
@@ -44,42 +54,34 @@ def listen_move_main_world():
         if move == "w":
             posit[1] = posit[1] + 1
             print("\033[32;1m<GAME>\033[0m{}地点：{}".format(name, posit))
-            if posit[1] > 32:
-                """posit[1] = 31
-                print("\03[32;1m<GAME>\03[0m边界限制：不能继续向上移动")"""
-                print("\033[32;1m<GAME>\033[31;1m你死了！")
-                print("\033[32;1m<GAME>\033[0m{}掉出了这个世界".format(name))
-                break
+            if posit[1] > y2:
+                vertical = True
+                if vertical == True:
+                    y2 = y2 + 20
                 
         elif move == "s":
             posit[1] = posit[1] - 1
             print("\033[32;1m<GAME>\033[0m{}地点：{}".format(name, posit))
-            if posit[1] < 0:
-                """posit[1] = 1
-                print("\03[32;1m<GAME>\03[0m边界限制：不能继续向下移动")"""
-                print("\033[32;1m<GAME>\033[31;1m你死了！")
-                print("\033[32;1m<GAME>\033[0m{}掉出了这个世界".format(name))
-                break
+            if posit[1] < y1:
+                vertical = True
+                if vertical == True:
+                    y1 = y1 - 20
                 
         elif move == "a":
             posit[0] = posit[0] - 1
             print("\033[32;1m<GAME>\033[0m{}地点：{}".format(name, posit))
-            if posit[0] < 0:
-                """posit[0] = 1
-                print("\03[32;1m<GAME>\03[0m边界限制：不能继续向左移动")"""
-                print("\033[32;1m<GAME>\033[31;1m你死了！")
-                print("\033[32;1m<GAME>\033[0m{}掉出了这个世界".format(name))
-                break
+            if posit[0] < x1:
+                vertical = True
+                if vertical == True:
+                    x1 = x1 - 20
                 
         elif move == "d":
             posit[0] = posit[0] + 1
             print("\033[32;1m<GAME>\033[0m{}地点：{}".format(name, posit))
-            if posit[0] > 20:
-                """posit[0] = 19
-                print("\03[32;1m<GAME>\03[0m边界限制：不能继续向右移动")"""
-                print("\033[32;1m<GAME>\033[31;1m你死了！")
-                print("\033[32;1m<GAME>\033[0m{}掉出了这个世界".format(name))
-                break
+            if posit[0] > x2:
+                vertical = True
+                if vertical == True:
+                    x2 = x2 + 20
                 
         elif move == "i":
             try:
